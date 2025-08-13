@@ -9,11 +9,11 @@ int main (void)
   double f;
   long double g;
 
-  printf("tamanio en plataforma de un char = %2d (bytes)\n", sizeof(a));
-  printf("tamanio en plataforma de un short = %2d (bytes)\n", sizeof(b));
-  printf("tamanio en plataforma de un int = %2d (bytes)\n", sizeof(c));
-  printf("tamanio en plataforma de un long = %2d (bytes)\n", sizeof(d));
-  printf("tamanio en plataforma de un float = %2d (bytes)\n", sizeof(e));
-  printf("tamanio en plataforma de un double = %2d (bytes)\n", sizeof(f));
-  printf("tamanio en plataforma de un long double = %2d (bytes)\n",                       sizeof(g));
+  printf("tamanio en plataforma de un char = %zu (bytes)\n", sizeof(a));
+  printf("tamanio en plataforma de un short = %zu (bytes)\n", sizeof(b));
+  printf("tamanio en plataforma de un int = %zu (bytes)\n", sizeof(c));
+  printf("tamanio en plataforma de un long = %zu (bytes)\n", sizeof(d));
+  printf("tamanio en plataforma de un float = %zu (bytes)\n", sizeof(e));
+  printf("tamanio en plataforma de un double = %zu (bytes)\n", sizeof(f));
+  printf("tamanio en plataforma de un long double = %zu (bytes)\n",                       sizeof(g));
 }
