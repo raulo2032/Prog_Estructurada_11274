@@ -19,7 +19,7 @@ void cargar_vector(int vector[]){
     int i=0;
     srand(time(NULL));
     for(i=0; i<TAMANIO; i++){
-        vector[i]= rand() % 10;
+        vector[i]= rand() % 10;      //vector[i] = min + rand() % (max - min + 1);
     }
     
 }
