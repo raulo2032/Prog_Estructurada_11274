@@ -1,0 +1,157 @@
+desde aqui resumen mio de leer pdf
+/********************************************************************************************/
+Un evento es algo que ocurre fuera del limite del sistema y que le provoca al sistema un estimulo al que debe, el sistema, dar respuesta
+Jacobson propone los casos de uso para representar el comportamiento del sistema
+casos de uso: "Es una secuencia de interacciones entre un sistema y alguien o algo que usa sus servicios" Un casos de uso es una tecnica para representar como alguien, por fuera del sistema, usa el sistema para obtener un resultado especifico.
+Se denomina desde la actividad que el usuario realiza con el sistema. Ingresando pedido, generando reporte...
+
+Se produce un evento por cada entrada que recibe el sistema, mientras que el caso de uso involucra todas las actividades necesarias para poder realizar la actividad con el sistema
+
+Como elementos del caso de uso, primero, delimitar el sistem.
+Otro elemento es el actor. El actor es persona o sistema que interactua con el sistema en estudio.
+Una misma persona, puede llegar a ser dos o mas actores en funcion de la manera en que usa el sistema en distintos momentos
+
+Las entradas y salidas, son siempre informacion
+Solo representamos comunicacion etre actores y casos de uso, nunca entre actores por fuera del sistema.
+
+Construyendo casos de uso:
+
+Siempre se inicia con un unico actor, se exprersan desde el punto de vista del actor, y se describe la interaccion el actor y sistema
+
+Una manera de darle fin al caso de uso, es cuando el actor concluye la actividad.
+
+Las propiedades funcionales, dado que son inherentes al sistema, se describen desde la perspectiva del sistema, y no del actor.
+
+Ficha de caso de uso: detallamos las acciones que el actor lleva a cabo en su interaccion con el sistema, y las responsabilidades del soft ante cada situacion
+
+En la columna de la derecha, del curso normal, representamos las responsabilidades del soft ante la accion del actor con el que interactua.
+En las alternativas, van las actividades que el sistema lleva a cabo solo en algunas oportunidades. Son actividades en las que se rompe el curso normal del caso de uso. ( extension ) 
+
+Cada ficha tiene como primera accion el evento o estinulo que pone en marcha el caso de uso. Es lo que activa el caso de uso, es el que provoca el estimulo al soft para que se ejecute el caso de uso.
+
+
+----------------------------------------
+Relacion de extension de un caso de uso:
+----------------------------------------
+
+Cuando se ejecuta un conjunto de actividades, que no siempre se ejecutan en el uso normal.
+Por ejemplo, el cliente tiene peliculas para devolver.
+En este caso, se produce una alternativa excepcion
+
+Una excepcion es una alternativa o excepcion y se convierte en otro caso de uso.
+
+Una excepcion es un caso de uso en si mismo, 
+Una bifurcacion o ruptura de secuencia es parte del mismo caso de uso
+La extencion se marca con linea punteada comunicandose con el caso de uso que extiende la funcionalidad.
+
+En el caso de la extension, seria del punto de vista de la programacion, un Alta de nuevo socio
+( estos se anotan en la fila de alternativas )  esto se da porque la bifurcacion al preguntar, si es socio o no, sale por el no, entonces, extiende a USAR Incorporando socio
+
+En el ejemplo del video club, puede verse la diferencia entre una bifurcacion y una relacion de extension en un caso de uso. La responsabilidad del soft "Si no es socio" es una bifurcacion o decision que el soft lleva a cabo en todos los casos. La extension se ejecuta solo si no es socio, por eso se representa como una alternativa.
+
+Para darnos cuenta cuando se trata de una relacion de extension y no de una desicion, tenemos que considerar que la extension, al ser un caso de uso en si mismo, debe tener un comportamiento tal que implique algun cambio en el sistema, que su ejecucion modifique el estado en que se encuentra el sistema antes de su ejecucion
+
+----------------------------------------
+Relacion de inclusion de un caso de uso:
+----------------------------------------
+
+La relacion de inclusion es cuando cierta funcionalidad, se utiliza en mas de un caso de uso
+( Es como el concepto de subrutina )
+Terminan siendo casos de uso en si mismos, y los detenctamos luego de que haber descripto varios casos de uso.
+A diferencia de la extension, en la relacion de inclusion, el caso de uso siempre se utiliza cuando se ejecuta el caso de uso con el que tiene relacion.
+Lo que las determina es la opcionalidad.
+Si no se usa siempre, es extension.
+Si la usa mas de un caso, es una inclusion.
+
+En la ficha, va dentro de la columna de la derecha, sin *, simplemente dice USAR "Buscando peliculas" por ejemplo.
+
+----------------------------------------
+Caso de uso temporal:
+----------------------------------------
+
+
+/********************************************************************************************/
+desde aqui resumen videos de miercoles 3 septiembre
+
+ua relacion de extension es determinado comportamiento ( no es una actividad )
+que el sistema debe llevar a cabo ante una situacion particular ( no lo hace siempre)
+(si lo hace siempre, no es relacion de extencion)
+El software lo lleva a cabo solo ante situaciones particulares
+
+
+Ingresando prestamo   <----- extiende a <---- Registrando nuevo socio 
+
+Ingresando devolucion  <----- extiende a <----	Aplicando sancion
+
+Ingresando prestamo usa la relacion de extension Ingresando nuevo socio
+Si al devolver el libro, se ve que fue con demora, el caso de uso ingresando devolucion usaria la relacion de extension aplicando sancion
+
+
+
+la relacion que gatilla es un control
+para que sea de extension tiene que haber algo que sucede de manera particular
+
+la relacion de extension siempre aparece en las alternativas con el numero de la accion en la que aparecen
+Se la representa en mayuscula	
+USAR registrando nuevo socio	 ( invocamos al caso de uso que representa la relacion de extension)
+
+la relacion de extension por lo general no tiene actores, tendra actores si envia informacion el caso de uso a algun actor 
+
+
+no recibe informacion porque no es de comunicacion, es de extension 
+tiene un estimulo ( que la activa??) 
+
+No todos los diagramas de caso de uso tienen relaciones de extension
+No todos los diagramas de caso de uso tiene relaciones de inclusion 
+tampoco todos tienen eventos temporales
+
+La relacion de inclusion, la usa mas de un caso de uso, es como la subrutina
+si no hay al menos dos casos de uso que la usen, es un caso de uso normal 
+
+En la remiseria, al rechasar un postulante, no cambia el conocimiento del sistema, con lo cual, no tiene una extension
+Una cosa es registar postulante, que si lo rechasa no dice nada ( no tiene un comportamiento el soft)
+Otra cosa es ingresar cliente, si no lo es, le pide los datos (cambia el conocimiento del sistema)
+ 
+Otra cosa es ingresar prestamo que extiene a registrar socio
+
+
+La inclusion, siempre va en la columna del soft, porque es su responsabilidad. Se invocan dentro del curso normal.
+La extension, va como alternativa, va en la fila de abajo, es una ruptura del flujo de trabajo
+En la fila del actor, suele ir vacia
+
+El curso normal, columna izquierda, va por fuera del sistem
+Responsabilidad del soft, columna derecha, es el sistea que estamos desarrollando
+
+En el rechazo del viaje, solo ponemos chofer rechaza el viaje, la escencia de la cuestion, no detallamos como la llamo o le aviso
+
+En la ficha se ve que si se rechaza el viaje, el soft no especifica que hace, no lo inventamos, no lo suponemos, 
+
+El caso de uso temporal, si tuviera una llegada de informacion, seria un caso de uso de comunicacion 
+
+El caso de uso secundario complementa a las propiedades funcionales que surgen de la nota de relevamiento
+No surgen directamnete de la nota de relevamiento
+Son lo que le dan persistencia a la informacion que resulta ESCENCIAL para el funcionamiento del sistema.
+Memoria escencial o persistencia, es el archivo que se guardo. Es el ABM en programacion.
+Dicha informacion es escencial para que el sistema pueda cumplir sus responsabilidades
+(Ejemplo de que un usuario cambio de e-mail, como le avisan lo que quieran avisar)
+En el caso de biblioteca el caso de uso secundario se llama:
+Mantener socios
+Mantener libros
+el actor tiene un signo de interrogacion, cuando no se especifica. pues la nota de relevamiento puede no indicar quien hace uso del caso de uso.
+En prestamos, habla de prestar y devolver
+En socios habla de alta
+En libros, no especifica nada
+
+La ficha tiene un actor a veces definido, a veces no.
+El estimulo es que hay novedades de los socios ( B / M ) ya que el Alta, la hace el sistema como propiedad funcional en una relacion de extension
+Podriamos representar en este caso de uso, a B y M como extensiones del mismo, pero no lo hacemos para no complicar
+
+El diccionario de datos, documenta las estructuras de datos que debe persistir el sistema para cumplir con las actividades escenciales.
+En primer termino, vamos a documentar solo las estructuras de datos de las memorias o almacenes de datos.
+ 18:00 
+ https://youtu.be/nMyDb7j3gPk?si=fwnWjj1HK0yEXYLg
+
+
+
+
+
