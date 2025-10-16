@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 #define LONG_CADENA 16
-#define CANT_MUSICOS 3
-#define CANT_DISCOS 3
+#define CANT_MUSICOS 2
+#define CANT_DISCOS 2
 
 
 
@@ -40,7 +40,7 @@ int main(void) {
     for(int i=0; i<CANT_MUSICOS;i++){
         printf("Nombre del musico:\t");
         fgets(musicos[i].nombre, LONG_CADENA, stdin);
-        while ((c = getchar()) != '\n' && c != EOF);
+        //while ((c = getchar()) != '\n' && c != EOF);
 
         
         printf("Edad del musico:\t");
@@ -49,13 +49,15 @@ int main(void) {
         
         printf("Genero:\t");
         fgets(musicos[i].genero, LONG_CADENA, stdin);
-        while ((c = getchar()) != '\n' && c != EOF);
+        //while ((c = getchar()) != '\n' && c != EOF);
 
         printf("Discos (Se cargan 3 poe ahora, luego lo hacemos dinamico):\t");
-        printf("Discos (Titulo\tAnio\tCantidad de canciones):\t");
+        printf("\nDiscos (Titulo\tAnio\tCantidad de canciones):\t");
         for(int j=0; j<CANT_DISCOS; j++){
+            printf("\nTitulo:\t");
+
             fgets(musicos[i].discos[j].titulo, LONG_CADENA, stdin);
-            while ((c = getchar()) != '\n' && c != EOF);
+            //while ((c = getchar()) != '\n' && c != EOF);
 
             printf("Anio del disco:\t");
             scanf("%d", &musicos[i].discos[j].anio);
@@ -63,30 +65,30 @@ int main(void) {
 
             printf("Cantidad de canciones:\t");
             scanf("%d", &musicos[i].discos[j].cant_canciones);
-            while ((c = getchar()) != '\n' && c != EOF);
+            //while ((c = getchar()) != '\n' && c != EOF);
 
         }
     }
 
-    printf("Vamos a mostrar\n");
+    printf("Vamos a mostrar\n\n\n");
     for (int i = 0; i < CANT_DISCOS; i++){
-        printf("Nombre del musico:\t%s", musicos[i].nombre);
+        printf("Nombre del musico:\t%s\n", musicos[i].nombre);
         
         
-        printf("Edad del musico:\t%d", musicos[i].edad);
+        printf("\nEdad del musico:\t%d", musicos[i].edad);
         
-        printf("Genero:\t%s", musicos[i].genero);
+        printf("\nGenero:\t%s", musicos[i].genero);
         
         printf("Discos (Titulo\tAnio\tCantidad de canciones):\t");
         
 
 
         for( int j=0; j< CANT_DISCOS; j++){
-            printf("Nombre del musico:\t%s", musicos[i].discos[j].titulo);
+            printf("\nNombre del musico:\t%s", musicos[i].discos[j].titulo);
 
-            printf("Nombre del musico:\t%d", musicos[i].discos[j].anio);
+            printf("\nNombre del musico:\t%d", musicos[i].discos[j].anio);
 
-            printf("Nombre del musico:\t%d", musicos[i].discos[j].cant_canciones);
+            printf("\nNombre del musico:\t%d", musicos[i].discos[j].cant_canciones);
 
 
 
